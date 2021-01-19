@@ -8,6 +8,8 @@
     $('#continuar').click(function () {
         retVal = true;
 
+        var type_pedido = 'Instalação ' + localStorage.getItem('painel_atual')
+
         //nome
         var nome = $('#nome').val().trim();
         if (nome.length < 3) {
@@ -16,9 +18,11 @@
         }
         else {
             $('#error_name').prop('hidden', true);
+            localStorage.setItem('nome', nome);
         };
 
         //email
+        var email = $("#email").val().trim();
         if ($("#email").val().trim().length < 10 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
             $("#error_email").prop('hidden', false);
             retVal = false;
@@ -27,7 +31,7 @@
             $("#error_email").prop('hidden', true);
         };
 
-        //descricao de telefone
+        //telefone
         var telefone = $('#telefone').val();
 
         if (telefone.length != 9) {
@@ -43,6 +47,35 @@
             $('#modal_pedido_erro').modal('show');
         }
         else {
+
+
+            //armazenar informacao temporaria-----------------------------------------------------------------------------
+            var temp_info = [];
+
+            var user_information = {
+                'nome': nome,
+                'telefone': telefone,
+                'email': email,
+                'endereco': localStorage.getItem('endereco'),
+                'tipo_pedido': type_pedido
+            }
+
+            //GUARDAR INFORMAÇÕES NO LOCALSTORAGE
+            if (localStorage.getItem('user_info') === null) {
+                temp_info.push(user_information);
+                localStorage.setItem('user_info', JSON.stringify(temp_info));
+            }
+            else {
+                //se ja la existir outros registos
+                temp_info = JSON.parse(localStorage.getItem('user_info'));
+                temp_info.push(user_information);
+                localStorage.setItem('user_info', JSON.stringify(temp_info));
+
+            }
+            //-------------------------------------------------------------------------------------------------------------
+
+
+
             //mostrar telefone enviada com sucesso
             $('#passo1').fadeOut(function () {
                 $('#passo1').prop('hidden', true);
@@ -66,44 +99,7 @@
 
 
 
-
-
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });

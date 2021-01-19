@@ -23,10 +23,15 @@
                 });
                 break
 
-            case 'paulo_pereira@tecnico.com':
-                //....
-                break
             case 'ana_carolina@admin.com':
+
+                //desaparecer ecra de login
+                $('#login_page').fadeOut(function () {
+                    $('#login_page').prop('hidden', true)
+                    window.location = "administracao.html";
+                });
+                break
+            case 'paulo_pereira@tecnico.com':
                 //....
                 break
             default:

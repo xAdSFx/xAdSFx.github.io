@@ -70,11 +70,19 @@
                     </div>
 
                     <!--TELEFONE-->
-                    <div class="input-group mb-3 col-sm-12 col-md-8 col-3" style="border-radius: 30px;">
+                    <div class="input-group mb-3 col-sm-12 col-md-10 col-8" style="border-radius: 30px;">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">Telefone</span>
                         </div>
                         <input type="number" class="form-control" placeholder="Insira aqui seu email" aria-describedby="basic-addon1" id="telefone">
+                    </div>
+
+                    <!--Endereço-->
+                    <div class="input-group mb-3 col-sm-12 col-md-10 col-8" style="border-radius: 30px;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Endereço</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Insira aqui o seu endereço" aria-describedby="basic-addon1" id="endereco">
                     </div>
 
                     <!--DESCRICAO PROBLEMA-->
@@ -155,6 +163,7 @@
                     <h5 hidden id="error_name">Nome muito curto.</h5>
                     <h5 hidden id="error_email">Email inválido.</h5>
                     <h5 hidden id="error_telefone">Número de telefone inválido.</h5>
+                    <h5 hidden id="error_endereco">O enderço deve ter no mínimo 3 palavras.</h5>
                     <h5 hidden id="error_problema">O problema deve ter mais do que 10 palavras.</h5>
                 </div>
                 <div class="modal-footer">

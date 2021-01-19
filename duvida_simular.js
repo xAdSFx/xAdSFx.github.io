@@ -15,6 +15,7 @@
         };
 
         //email
+        var email = $("#email").val().trim();
         if ($("#email").val().trim().length < 10 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
             $("#error_email").prop('hidden', false);
             retVal = false;
@@ -40,6 +41,38 @@
             $('#modal_duvida_erro').modal('show');
         }
         else {
+
+
+            //armazenar informacao temporaria-----------------------------------------------------------------------------
+            var temp_info = [];
+
+            var user_duvidas_info = {
+                'nome': nome,
+                'email': email
+            }
+
+            //GUARDAR INFORMAÇÕES NO LOCALSTORAGE
+            if (localStorage.getItem('user_duvidas') === null) {
+                temp_info.push(user_duvidas_info);
+                localStorage.setItem('user_duvidas', JSON.stringify(temp_info));
+            }
+            else {
+                //se ja la existir outros registos
+                temp_info = JSON.parse(localStorage.getItem('user_duvidas'));
+                temp_info.push(user_duvidas_info);
+                localStorage.setItem('user_duvidas', JSON.stringify(temp_info));
+
+            }
+            //-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
             //mostrar duvida enviada com sucesso
             $('#passo1').fadeOut(function () {
                 $('#passo1').prop('hidden', true);
@@ -66,41 +99,4 @@
 
 
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

@@ -49,63 +49,38 @@
     <!---------------------------------------------------------------------------PEDIDO ASSIST FORM--------------------------------------------------------------------------->
     <div class="container" style="height: 300px; margin-top: 50px; margin-bottom: 400px">
         <div>
-            <h1>Monitorização do dispositivo</h1><p style="font-size: 15pt"> Informações de funcionamento</p>
+            <h1>Área de administração</h1><p style="font-size: 15pt"> Pedidos</p>
 
-            <!--INICIO MONIT-->
-
-            <div class="row">
-
-                <!--EFICIENCIA-->
-                <div class="col-lg-6">
-                    <div class="circle-wrap">
-                        <div class="circle">
-                            <div class="mask full">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="mask half">
-                                <div class="fill"></div>
-                            </div>
-                            <div class="inside-circle"> <b>91</b>% </div>
-                        </div>
-                    </div>
-                    <hr class="linha_sep col-lg-5" />
-                    <div style="text-align: center; margin-top: 15px;">
-                        <p style="font-size: 15pt">Eficiência de conversão</p>
-                        <h3>91%</h3>
-                    </div>
-                </div>
+            <!--INICIO ADMIN-->
+            <!--TABELA DE PEDIDOS-->
 
 
-                <!--EN. GERADA-->
-                <div class="col-lg-6">
-                    <div class="circle1-wrap1">
-                        <div class="circle1">
-                            <div class="mask1 full1">
-                                <div class="fill1"></div>
-                            </div>
-                            <div class="mask1 half1">
-                                <div class="fill1"></div>
-                            </div>
-                            <div class="inside1-circle1"> <b>1.014</b>kW</div>
-                        </div>
-                    </div>
-                    <hr class="linha_sep col-lg-5" />
-                    <div style="text-align: center; margin-top: 15px;">
-                        <p style="font-size: 15pt">Energia gerada hoje até ao momento</p>
-                        <h3>1.014kW</h3>
-                        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#staticBackdrop" style="border-radius: 30px; width: 60px">
-                            + <i class="fa fa-info" aria-hidden="true"></i>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col">Tipo de pedido</th>
+                        <th scope="col">Atribuir a</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>s</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>tecnico 1</td>
+                    </tr>
+                </tbody>
+            </table>
 
 
             <!--BOTOES-->
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top: 80px;">
-                    <a href="area_reservada_cliente.html"><button id="cancelar" type="button" class="btn btn-dark" style="border-radius: 30px; width: 230px ">Voltar à área de cliente</button></a>
+                <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top: 30px;">
+                    <button id="consultar_duvidas" type="button" class="btn btn-dark" style="border-radius: 30px; width: 230px ">Consultar dúvidas<i class="fa fa-arrow-right icon_espacamento" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
