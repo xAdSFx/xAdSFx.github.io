@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SmartSun</title>
+
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--GOOGLE FONTES-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+
+
+    <!--CSS link-->
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+
+<body>
+
+
+
+    <!--MENU-TOP-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white">
+
+        <!--BRAND-->
+        <a class="navbar-brand brand_title" href="index.html" style="margin-left: 20px;"><i class="fa fa-sun-o" aria-hidden="true" style="margin-right: 10px;"></i>SmartSun</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+
+
+    <!--CONATINER PRINCIPAL-->
+    <div class="container container_2" style="height: 300px;">
+
+
+
+        <!---------------------------------------------------------------------------PASSO 1 (ENDEREÇO)---------------------------------------------------------------------------->
+
+        <div id="passo1">
+            <h1>Expor dúvida</h1>
+            <!--INICIO FORMULARIO-->
+            <div class="form_duvidas align-middle" style="margin: auto">
+                <h2>Dados necessários</h2>
+                <div class="row" style="margin-top: 25px;">
+
+                    <!--NOME-->
+                    <div class="input-group mb-3 col-sm-12 col-md-10 col-8" style="border-radius: 30px;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Nome</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Insira aqui seu nome" aria-describedby="basic-addon1" id="nome">
+                    </div>
+
+
+                    <!--EMAIL-->
+                    <div class="input-group mb-3 col-sm-12 col-md-10 col-8" style="border-radius: 30px;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Insira aqui seu email" aria-describedby="basic-addon1" id="email">
+                    </div>
+
+                    <div class="input-group col-sm-12 col-md-10 col-8">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Dúvida</span>
+                        </div>
+                        <textarea class="form-control" placeholder="Coloque aqui a sua dúvida" rows="4" id="duvida"></textarea>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top: 30px;">
+                        <a href="index.html"><button id="cancelar" type="button" class="btn btn-dark" style="border-radius: 30px; width: 230px ">Cancelar simulação<i class="fa fa-times-circle icon_espacamento" aria-hidden="true"></i></button></a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top: 30px;">
+                        <button id="continuar" type="button" class="btn btn-dark" style="border-radius: 30px; width: 230px ">Continuar<i class="fa fa-arrow-right icon_espacamento" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--------------------------------------------------------------A ENVIAR DÚVIDA----------------------------------------------------------------------->
+        <div id="enviar" hidden>
+            <br />
+            <!--INICIO FORMULARIO-->
+            <div class="form_simulacao align-middle" style="margin: auto; text-align: center">
+                <h2>A enviar dúvida</h2>
+
+                <!--SPIN-->
+                <div style="margin-top: 60px; width: 5rem; height: 5rem;" class="spinner-grow text-center" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------DUVIDA ENVIADA COM SUCESSO---------------------------------------------------------------------------->
+
+        <div id="duvida_sucesso" hidden>
+            <br />
+            <!--INICIO FORMULARIO-->
+            <div class="form_simulacao align-middle" style="margin: auto; text-align: center">
+                <h2>DÚVIDA ENVIADA COM SUCESSO</h2>
+                <h5 style="margin-top: 15px">Esteja atento ao seu email!</h5>
+
+                <!--SPIN-->
+                <div style="margin-top: 60px; text-align: center">
+                    <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+                </div>
+
+
+                <!--BOTOES-->
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top: 80px;">
+                        <a href="index.html"><button id="cancelar" type="button" class="btn btn-dark" style="border-radius: 30px; width: 230px ">Voltar à página principal<i class="fa fa-home icon_espacamento" aria-hidden="true"></i></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <!--FOOTER-->
+    <nav class="navbar navbar-light bg-light" role="navigation" style="background-color: black;">
+        <div class="container">
+            <div class="navbar-text small" style="color: #818181">&copy;MAS2020 - Modelação e Análise de Sistemas</div>
+            <div class="navbar-right navbar-text small d-sm-none d-md-block"><a href="http://www.ua.pt" title="Universidade de Aveiro" style="color: #818181">Universidade de Aveiro</a></div>
+        </div>
+    </nav>
+
+
+
+
+    <!--MODALS DE ALERTA DE VALIDACAO-->
+    <!--ERRO FORMULARIO-->
+    <div class="modal fade" id="modal_duvida_erro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Erros encontrados!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center">
+                    <h5 hidden id="error_name">Nome muito curto.</h5>
+                    <h5 hidden id="error_email">Email inválido.</h5>
+                    <h5 hidden id="error_duvida">A dúvida deve ter mais do que 10 palavras.</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--CONTEUDO DO ECRA PRINCIPAL-->
+    <!--FOOTER-->
+    <!-- Scripts -->
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+    <!-- KnockoutJS -->
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+
+    <!--MY SCRIPT-->
+    <script src="duvida_simular.js"></script>
+</body>
+
+</html>
