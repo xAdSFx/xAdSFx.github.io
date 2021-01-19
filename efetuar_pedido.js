@@ -23,7 +23,7 @@
 
         //email
         var email = $("#email").val().trim();
-        if ($("#email").val().trim().length < 10 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
+        if ($("#email").val().trim().length < 1 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
             $("#error_email").prop('hidden', false);
             retVal = false;
         }

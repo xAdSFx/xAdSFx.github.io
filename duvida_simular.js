@@ -16,7 +16,7 @@
 
         //email
         var email = $("#email").val().trim();
-        if ($("#email").val().trim().length < 10 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
+        if ($("#email").val().trim().length < 1 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
             $("#error_email").prop('hidden', false);
             retVal = false;
         }
@@ -25,10 +25,11 @@
         };
 
         //descricao de duvida
+        var duvida_table = $('#duvida').val().trim();
         var duvida = $('#duvida').val().trim().split(' ');
         console.log(duvida);
 
-        if (duvida.length < 10) {
+        if (duvida.length < 3) {
             $("#error_duvida").prop('hidden', false);
             retVal = false;
         }
@@ -48,7 +49,8 @@
 
             var user_duvidas_info = {
                 'nome': nome,
-                'email': email
+                'email': email,
+                'descricao': duvida_table
             }
 
             //GUARDAR INFORMAÇÕES NO LOCALSTORAGE

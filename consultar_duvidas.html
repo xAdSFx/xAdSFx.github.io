@@ -43,7 +43,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <!--TERM. SESSAO-->
         <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 35px">
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -56,40 +55,25 @@
     <!---------------------------------------------------------------------------PEDIDO ASSIST FORM--------------------------------------------------------------------------->
     <div class="container" style="height: 300px; margin-top: 50px; margin-bottom: 400px">
         <div>
-            <h1>Área de administração</h1><p style="font-size: 15pt"> Pedidos</p>
+            <h1>Área de administração</h1><p style="font-size: 15pt"> Dúvidas de utilizadores</p>
 
             <!--INICIO ADMIN-->
             <!--TABELA DE PEDIDOS-->
 
 
-            <table id="pedidos_table" class="table table-hover table-striped">
+            <table id="duvidas_table" class="table table-hover table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Tipo de pedido</th>
-                        <th scope="col">Atribuir a</th>
+                        <th scope="col">Email</th>
+                        <th style="text-align: right" scope="col">Descrição de dúvida</th>
                     </tr>
                 </thead>
-                <tbody data-bind="foreach: pedidos">
+                <tbody data-bind="foreach: duvidas">
                     <tr>
                         <td data-bind="text: nome"></td>
-                        <td data-bind="text: telefone"></td>
-                        <td data-bind="text: endereco"></td>
-                        <td data-bind="text: tipo_pedido"></td>
-                        <td>
-                            <select class="form-control">
-                                <option>Técnico 1</option>
-                                <option>Técnico 2</option>
-                                <option>Técnico 3</option>
-                                <option>Técnico 4</option>
-                                <option>Técnico 5</option>
-                                <option>Técnico 6</option>
-                                <option>Técnico 7</option>
-                                <option>Técnico 8</option>
-                            </select>
-                        </td>
+                        <td data-bind="text: email"></td>
+                        <td style="text-align: right"><button type="button" class="btn btn-outline-dark" style="border-radius: 30px;" data-toggle="modal" data-target="#modal_duvida" data-bind="attr: { value: descricao }" onclick="post_duvida(value)">Ver</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -99,7 +83,7 @@
             <!--BOTOES-->
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-3" style="margin-top: 30px;">
-                    <a href="consultar_duvidas.html"><button id="consultar_duvidas" type="button" class="btn btn-dark" style="border-radius: 30px; width: 230px">Consultar dúvidas<i class="fa fa-arrow-right icon_espacamento" aria-hidden="true"></i></button></a>
+                    <a href="administracao.html"><button id="consultar_duvidas" type="button" class="btn btn-dark" style="border-radius: 30px; width: 230px">Voltar à área de pedidos</button></a>
                 </div>
             </div>
         </div>
@@ -109,11 +93,11 @@
 
 
     <!--SEM PEDIDOS A MOSTRAR-->
-    <div class="modal fade" id="sem_pedidos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="sem_duvidas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4>Não existem pedidos</h4>
+                    <h4>Não existem dúvidas</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -128,6 +112,34 @@
         </div>
     </div>
 
+
+
+
+
+
+
+    <!---------------------------------------------------------MODAL DE DUVIDAS ---------------------------------------------------------------->
+    <!-- Modal -->
+    <div class="modal fade" id="modal_duvida" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Descrição de dúvida</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="descricao"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
     <!--FOOTER-->
     <nav class="navbar navbar-light bg-light" role="navigation" style="background-color: black;">
         <div class="container">
@@ -135,7 +147,6 @@
             <div class="navbar-right navbar-text small d-sm-none d-md-block"><a href="http://www.ua.pt" title="Universidade de Aveiro" style="color: #818181">Universidade de Aveiro</a></div>
         </div>
     </nav>
-
     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
     <!-- Scripts -->
     <!-- JQuery -->
@@ -146,7 +157,7 @@
             crossorigin="anonymous"></script>
     <!-- KnockoutJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
-    <script src="administracao.js"></script>
+    <script src="consultar_duvidas.js"></script>
 
 </body>
 

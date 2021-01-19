@@ -20,7 +20,7 @@
 
         //email
         var email = $("#email").val().trim();
-        if ($("#email").val().trim().length < 10 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
+        if ($("#email").val().trim().length < 1 || $("#email").val().trim().length > 100 || ($("#email").val().trim().lastIndexOf('.') < $("#email").val().trim().indexOf('@')) || (-1 === $("#email").val().trim().indexOf('@'))) {
             $("#error_email").prop('hidden', false);
             retVal = false;
         }
@@ -32,7 +32,7 @@
         var problema = $('#problema').val().trim().split(' ');
         console.log(problema);
 
-        if (problema.length < 10) {
+        if (problema.length < 2) {
             $("#error_problema").prop('hidden', false);
             retVal = false;
         }

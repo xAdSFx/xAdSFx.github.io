@@ -13,58 +13,37 @@
         console.log(conta_cliente);
         console.log(pass_cliente);
 
+
+
         switch (conta_cliente) {
             case 'joaquim_silva@cliente.com':
+                if (pass_cliente == '123456') {
+                    $('#login_page').fadeOut(function () {
+                        $('#login_page').prop('hidden', true)
+                        window.location = "area_reservada_cliente.html";
+                    });
+                }
+                else {
+                    $('#erro_pass').modal('show');
+                }
+                break;
 
-                //desaparecer ecra de login
-                $('#login_page').fadeOut(function () {
-                    $('#login_page').prop('hidden', true)
-                    window.location = "area_reservada_cliente.html";
-                });
-                break
 
             case 'ana_carolina@admin.com':
-
-                //desaparecer ecra de login
-                $('#login_page').fadeOut(function () {
-                    $('#login_page').prop('hidden', true)
-                    window.location = "administracao.html";
-                });
-                break
-            case 'paulo_pereira@tecnico.com':
-                //....
-                break
+                if (pass_cliente == '123456') {
+                    $('#login_page').fadeOut(function () {
+                        $('#login_page').prop('hidden', true)
+                        window.location = "administracao.html";
+                    });
+                }
+                else {
+                    $('#erro_pass').modal('show');
+                }
+                break;
+            //tecnico FALTA
             default:
                 $('#erro_login').modal('show');
-        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        };
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
